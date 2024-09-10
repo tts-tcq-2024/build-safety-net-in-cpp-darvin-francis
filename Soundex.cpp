@@ -24,16 +24,26 @@ std::string initializeSoundex(const std::string& name) {
     return soundex;
 }
 
+// Function to check if a Soundex code should be added
+bool shouldAddCode(char code, char prevCode) {
+    return code != '0' && code != prevCode;
+}
+
+// Function to process each character in the name and update Soundex
+void processCharacter(char code, std::string& soundex, char& prevCode) {
+    if (shouldAddCode(code, prevCode)) {
+        soundex += code;
+        prevCode = code;
+    }
+}
+
 // Function to update the Soundex code based on the name
 void updateSoundex(std::string& soundex, const std::string& name) {
     char prevCode = getSoundexCode(name[0]);
 
     for (size_t i = 1; i < name.length() && soundex.length() < 4; ++i) {
         char code = getSoundexCode(name[i]);
-        if (code != '0' && code != prevCode) {
-            soundex += code;
-            prevCode = code;
-        }
+        processCharacter(code, soundex, prevCode);
     }
 }
 
