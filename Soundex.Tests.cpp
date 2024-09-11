@@ -73,5 +73,6 @@ TEST(SoundexTest, GenerateSoundex) {
     EXPECT_EQ(generateSoundex(""), "");
     EXPECT_EQ(generateSoundex("A"), "A000");
     EXPECT_EQ(generateSoundex("Robert"), "R163");
+    
 }
 
