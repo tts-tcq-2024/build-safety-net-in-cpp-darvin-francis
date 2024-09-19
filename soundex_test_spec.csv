@@ -1,6 +1,6 @@
 Test case number,Test case,Description,Test input,Expected Output
 1,Basic Functionality,Verify basic functionality by passing common name,"""Smith""","""S530"""
-2,Padding,Verifies that single-letter inputs are correctly padded.,"""0""","""0000"""
+2,Padding,Verifies that single-letter inputs are correctly padded.,"""A""","""A000"""
 3,Truncation,Ensures the output is truncated to 4 characters.,"""Alexander""","""A425"""
 4,Case Insensitivity,Verifies that the algorithm is case insensitive.,"""sMiTh""","""S530"""
 5,Empty String,Verifies that an empty string returns an empty result.,"""""",""""""
